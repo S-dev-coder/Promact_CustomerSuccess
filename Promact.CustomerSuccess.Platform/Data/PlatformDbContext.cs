@@ -26,7 +26,7 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     public DbSet<ClientFeedback> ClientFeedbacks { get; set; }
     public DbSet<ProjectBudget> ProjectBudgets { get; set; }
     public DbSet<PhaseMilestone> PhaseMilestones { get; set; }
-    public DbSet<ProjectResources> ProjectResources { get; set; }
+    public DbSet<ProjectResource> ProjectResources { get; set; }
     public DbSet<RiskProfile> RiskProfiles { get; set; }
     public DbSet<MeetingMinute> MeetingMinutes { get; set; }
     public DbSet<EscalationMatrix> EscalationMatrices { get; set; }
@@ -73,7 +73,7 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
         {
             ProjectBudget.ConfigureByConvention();
         });
-        builder.Entity<ProjectResources>(ProjectResources =>
+        builder.Entity<ProjectResource>(ProjectResources =>
         {
             ProjectResources.ConfigureByConvention();
         });

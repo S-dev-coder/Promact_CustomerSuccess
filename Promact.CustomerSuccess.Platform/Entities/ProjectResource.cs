@@ -3,7 +3,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Promact.CustomerSuccess.Platform.Entities
 {
-    public class ProjectResources : AuditedAggregateRootWithUser<Guid, ApplicationUser>
+    public class ProjectResource : AuditedAggregateRootWithUser<Guid, ApplicationUser>
     {
         [ForeignKey("Project")]
         public Guid ProjectId { get; set; }
@@ -15,6 +15,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public required string Role { get; set; }
+        public string? Comment { get; set; }
         public override object?[] GetKeys()
         {
             throw new NotImplementedException();
