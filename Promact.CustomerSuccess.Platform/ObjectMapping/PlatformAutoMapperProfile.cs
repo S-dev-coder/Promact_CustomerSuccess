@@ -26,5 +26,8 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<UpdateProjectUpdateDto, ProjectUpdate>();
         CreateMap<ProjectUpdate, ProjectUpdateDto>().ReverseMap();
 
+       CreateMap<CreateMeetingMinuteDto,MeetingMinute>();
+        CreateMap<UpdateMeetingMinuteDto,MeetingMinute>();
+        CreateMap<MeetingMinute,MeetingMinuteDto>().ReverseMap();
     }
 }

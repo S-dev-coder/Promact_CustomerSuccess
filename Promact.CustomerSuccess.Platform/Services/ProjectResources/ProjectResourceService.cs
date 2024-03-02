@@ -18,6 +18,7 @@ namespace Promact.CustomerSuccess.Platform.Services.ProjectResources
     {
         public ProjectResourceService(IRepository<ProjectResource, Guid> repository) : base(repository)
         {
+
         }
     }
 }

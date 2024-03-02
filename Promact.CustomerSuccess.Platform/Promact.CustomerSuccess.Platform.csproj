@@ -101,19 +101,15 @@
 
   <ItemGroup>
     <Compile Remove="Logs\**" />
-    <Compile Remove="Services\NewFolder1\**" />
     <Compile Remove="Services\NewFolder2\**" />
     <Compile Remove="Services\NewFolder3\**" />
     <Content Remove="Logs\**" />
-    <Content Remove="Services\NewFolder1\**" />
     <Content Remove="Services\NewFolder2\**" />
     <Content Remove="Services\NewFolder3\**" />
     <EmbeddedResource Remove="Logs\**" />
-    <EmbeddedResource Remove="Services\NewFolder1\**" />
     <EmbeddedResource Remove="Services\NewFolder2\**" />
     <EmbeddedResource Remove="Services\NewFolder3\**" />
     <None Remove="Logs\**" />
-    <None Remove="Services\NewFolder1\**" />
     <None Remove="Services\NewFolder2\**" />
     <None Remove="Services\NewFolder3\**" />
   </ItemGroup>
