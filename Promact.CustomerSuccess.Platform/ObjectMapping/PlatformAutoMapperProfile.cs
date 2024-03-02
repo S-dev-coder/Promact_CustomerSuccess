@@ -12,5 +12,10 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<CreateProjectDto, Project>();
         CreateMap<UpdateProjectDto, Project>();
         CreateMap<Project, ProjectDto>().ReverseMap();
+
+
+        CreateMap<CreateClientFeedbackDto, ClientFeedback>();
+        CreateMap<UpdateClientFeedbackDto, ClientFeedback>();
+        CreateMap<ClientFeedback, ClientFeedbackDto>().ReverseMap();
     }
 }

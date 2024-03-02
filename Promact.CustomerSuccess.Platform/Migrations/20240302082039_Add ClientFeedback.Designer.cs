@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Promact.CustomerSuccess.Platform.Migrations
 {
     [DbContext(typeof(PlatformDbContext))]
-    [Migration("20240205064319_FixApplicationUserEscalationMatrix")]
-    partial class FixApplicationUserEscalationMatrix
+    [Migration("20240302082039_Add ClientFeedback")]
+    partial class AddClientFeedback
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.PostgreSql)
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -82,12 +82,18 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Details")
+                    b.Property<bool>("ActionTaken")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ClosureDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime>("DateReceived")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("DetailedFeedback")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<DateTime>("FeedbackDate")
-                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("FeedbackType")
                         .HasColumnType("integer");
@@ -403,9 +409,6 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("BudgetId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("CreationTime");
@@ -431,8 +434,6 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BudgetId");
 
                     b.ToTable("Projects");
                 });
@@ -474,6 +475,9 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("LastModifierId");
 
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("Type")
                         .HasColumnType("integer");
 
@@ -482,6 +486,8 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                     b.HasIndex("CreatorId");
 
                     b.HasIndex("LastModifierId");
+
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("ProjectBudgets");
                 });
@@ -2531,15 +2537,6 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Project", b =>
-                {
-                    b.HasOne("Promact.CustomerSuccess.Platform.Entities.ProjectBudget", "Budget")
-                        .WithMany()
-                        .HasForeignKey("BudgetId");
-
-                    b.Navigation("Budget");
-                });
-
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ProjectBudget", b =>
                 {
                     b.HasOne("Promact.CustomerSuccess.Platform.Entities.ApplicationUser", "Creator")
@@ -2550,9 +2547,17 @@ namespace Promact.CustomerSuccess.Platform.Migrations
                         .WithMany()
                         .HasForeignKey("LastModifierId");
 
+                    b.HasOne("Promact.CustomerSuccess.Platform.Entities.Project", "Project")
+                        .WithMany("Budgets")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Creator");
 
                     b.Navigation("LastModifier");
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ProjectResources", b =>
@@ -2801,6 +2806,8 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Project", b =>
                 {
+                    b.Navigation("Budgets");
+
                     b.Navigation("ClientFeedbacks");
 
                     b.Navigation("Documents");
