@@ -16,6 +16,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public virtual ICollection<MeetingMinute>? MeetingMinutes { get; set; }
 
         public virtual ICollection<ProjectUpdate>? ProjectUpdates { get; set; }
+        public virtual ICollection<Phase>? Phases { get; set; }
     }
 }
 

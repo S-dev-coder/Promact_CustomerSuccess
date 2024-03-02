@@ -33,6 +33,8 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     public DbSet<Sprint> Sprints { get; set; }
     public DbSet<ApplicationUser> Users { get; set; }
     public DbSet<ProjectUpdate> ProjectUpdates { get; set; }
+    public DbSet<ApprovedTeam> ApprovedTeams { get; set; }
+    public DbSet<Phase> Phases { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -108,5 +110,14 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
             ProjectUpdate.ConfigureByConvention();
         });
 
+        builder.Entity<ApprovedTeam>(ApprovedTeam =>
+        {
+            ApprovedTeam.ConfigureByConvention();
+        });
+
+        builder.Entity<Phase>(Phase =>
+        {
+            Phase.ConfigureByConvention();
+        });
     }
 }

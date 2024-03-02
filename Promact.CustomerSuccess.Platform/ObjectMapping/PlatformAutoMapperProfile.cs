@@ -29,5 +29,14 @@ public class PlatformAutoMapperProfile : Profile
        CreateMap<CreateMeetingMinuteDto,MeetingMinute>();
         CreateMap<UpdateMeetingMinuteDto,MeetingMinute>();
         CreateMap<MeetingMinute,MeetingMinuteDto>().ReverseMap();
+
+        CreateMap<CreateApprovedTeamDto, ApprovedTeam>();
+        CreateMap<UpdateApprovedTeamDto, ApprovedTeam>();
+        CreateMap<ApprovedTeam, ApprovedTeamDto>().ReverseMap();
+
+        CreateMap<CreatePhaseDto, Phase>();
+        CreateMap<UpdatePhaseDto, Phase>();
+        CreateMap<Phase, PhaseDto>().ReverseMap();
+
     }
 }
