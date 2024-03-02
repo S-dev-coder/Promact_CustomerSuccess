@@ -8,8 +8,8 @@ using Volo.Abp.Domain.Repositories;
 namespace Promact.CustomerSuccess.Platform.Services.ProjectResources
 {
     public class ProjectResourceService :
-       CrudAppService<ProjectResource, 
-           ProjectResourceDto, 
+       CrudAppService<ProjectResource,
+           ProjectResourceDto,
            Guid, 
            PagedAndSortedResultRequestDto, 
            CreateProjectResourceDto, 

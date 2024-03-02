@@ -32,6 +32,7 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     public DbSet<EscalationMatrix> EscalationMatrices { get; set; }
     public DbSet<Sprint> Sprints { get; set; }
     public DbSet<ApplicationUser> Users { get; set; }
+    public DbSet<ProjectUpdate> ProjectUpdates { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -102,6 +103,10 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
             ApplicationUser.ConfigureByConvention();
         });
 
+        builder.Entity<ProjectUpdate>(ProjectUpdate =>
+        {
+            ProjectUpdate.ConfigureByConvention();
+        });
 
     }
 }
