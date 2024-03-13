@@ -1,7 +1,8 @@
-﻿using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
+﻿using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistorys;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
 using Volo.Abp.Application.Dtos;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.Projects
 {
     public class ProjectDto : IEntityDto<Guid>
     {
@@ -17,6 +18,7 @@ namespace Promact.CustomerSuccess.Platform.Services.Dtos
         public IEnumerable<ProjectResourceDto>? Resources { get; set; }
         public IEnumerable<ClientFeedbackDto>? ClientFeedbacks { get; set; }
         public IEnumerable<MeetingMinuteDto>? MeetingMinutes { get; set; }
+        public IEnumerable<AuditHistoryDto>? AuditHistories { get; set; }
 
     }
 }

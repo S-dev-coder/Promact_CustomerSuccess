@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Promact.CustomerSuccess.Platform.Entities;
 using Promact.CustomerSuccess.Platform.Services.Dtos;
+using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistorys;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
+using Promact.CustomerSuccess.Platform.Services.Dtos.Projects;
 
 namespace Promact.CustomerSuccess.Platform.ObjectMapping;
 

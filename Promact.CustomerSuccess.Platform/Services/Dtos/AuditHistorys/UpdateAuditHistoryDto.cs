@@ -1,9 +1,6 @@
-﻿using Abp.Domain.Entities.Auditing;
-using Volo.Abp.Domain.Entities;
-
-namespace Promact.CustomerSuccess.Platform.Entities
+﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistorys
 {
-    public class AuditHistory : AuditedEntity<Guid>
+    public class UpdateAuditHistoryDto
     {
         public DateTime DateOfAudit { get; set; }
         public Guid ReviewedBy { get; set; }
@@ -13,5 +10,3 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public string ActionItem { get; set; }
     }
 }
-
-
