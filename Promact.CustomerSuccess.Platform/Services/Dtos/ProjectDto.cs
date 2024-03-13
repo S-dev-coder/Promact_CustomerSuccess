@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Application.Dtos;
+﻿using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
+using Volo.Abp.Application.Dtos;
 
 namespace Promact.CustomerSuccess.Platform.Services.Dtos
 {
@@ -7,6 +8,7 @@ namespace Promact.CustomerSuccess.Platform.Services.Dtos
         public Guid Id { get; set; }
         public required string Name { get; set; }
         public required string Description { get; set; }
+        public DateTime CreationTime { get; protected set; }
         public IEnumerable<DocumentDto>? Documents { get; set; }
         public IEnumerable<ProjectBudgetDto>? Budgets { get; set; }
         public IEnumerable<EscalationMatrixDto>? EscalationMatrices { get; set; }

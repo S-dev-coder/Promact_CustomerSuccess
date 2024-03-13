@@ -5,8 +5,8 @@ namespace Promact.CustomerSuccess.Platform.Services.Dtos
 {
     public class UpdateClientFeedbackDto
     {
-     
         public Guid ProjectId { get; set; }
+
         public FeedbackType FeedbackType { get; set; }
         public required string DetailedFeedback { get; set; }
         public bool ActionTaken { get; set; }
