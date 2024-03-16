@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Volo.Abp.Domain.Entities.Auditing;
+﻿using Promact.CustomerSuccess.Platform.Entities;
+using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Entities;
 
-namespace Promact.CustomerSuccess.Platform.Entities
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.Sprints
 {
-    public class Sprint : AuditedEntity<Guid>
+    public class SprintDto : IEntityDto<Guid>
     {
-        [ForeignKey(nameof(PhaseMilestone))]
+        public Guid Id { get; set; }
         public Guid PhaseMilestoneId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -14,9 +15,5 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public required string Goals { get; set; }
         public int SprintNumber { get; set; }
         public virtual PhaseMilestone? PhaseMilestone { get; set; }
-        public override object?[] GetKeys()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -37,6 +37,7 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     public DbSet<Phase> Phases { get; set; }
     public DbSet<VersionHistory> VersionHistories { get; set; }
     public DbSet<AuditHistory> AuditHistories { get; set; }
+    public DbSet<Stakeholder> Stakeholders { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -130,6 +131,11 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
         builder.Entity<AuditHistory>(AuditHistory =>
         {
             AuditHistory.ConfigureByConvention();
+        });
+
+        builder.Entity<Stakeholder>(Stakeholder =>
+        {
+            Stakeholder.ConfigureByConvention();
         });
     }
 }

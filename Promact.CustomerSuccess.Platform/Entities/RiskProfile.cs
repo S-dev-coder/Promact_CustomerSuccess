@@ -3,7 +3,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Promact.CustomerSuccess.Platform.Entities
 {
-    public class RiskProfile : AuditedAggregateRootWithUser<Guid, ApplicationUser>
+    public class RiskProfile : AuditedEntity<Guid>
     {
         [ForeignKey("Project")]
         public Guid ProjectId { get; set; }
@@ -11,7 +11,6 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public RiskType Description { get; set; }
         public string Severity { get; set; }
         public RiskImpact Impact { get; set; } 
-        
         public string Status { get; set; }
         public DateTime ClosureDate { get; set; }
         public virtual ICollection<RemediationStep>? RemediationSteps { get; set; }

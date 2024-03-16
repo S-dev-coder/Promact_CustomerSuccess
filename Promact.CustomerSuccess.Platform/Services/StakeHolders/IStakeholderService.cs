@@ -1,6 +1,8 @@
-﻿namespace Promact.CustomerSuccess.Platform.Services.StakeHolders
+﻿using Volo.Abp.Application.Services;
+
+namespace Promact.CustomerSuccess.Platform.Services.StakeHolders
 {
-    public interface IStakeholderService
+    public interface IStakeholderService : IApplicationService
     {
     }
 }

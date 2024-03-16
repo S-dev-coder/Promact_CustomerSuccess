@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Promact.CustomerSuccess.Platform.Data;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Promact.CustomerSuccess.Platform.Migrations
 {
     [DbContext(typeof(PlatformDbContext))]
-    partial class PlatformDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240316102758_Update_Sprint_Model")]
+    partial class Update_Sprint_Model
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +74,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("TenantId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ApprovedTeam", b =>
@@ -115,7 +118,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("PhaseId");
 
-                    b.ToTable("ApprovedTeams", (string)null);
+                    b.ToTable("ApprovedTeams");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.AuditHistory", b =>
@@ -164,7 +167,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("AuditHistories", (string)null);
+                    b.ToTable("AuditHistories");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ClientFeedback", b =>
@@ -195,7 +198,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ClientFeedbacks", (string)null);
+                    b.ToTable("ClientFeedbacks");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Document", b =>
@@ -238,7 +241,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Documents", (string)null);
+                    b.ToTable("Documents");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.DocumentVersion", b =>
@@ -278,7 +281,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("DocumentId");
 
-                    b.ToTable("DocumentVersions", (string)null);
+                    b.ToTable("DocumentVersions");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.EscalationMatrix", b =>
@@ -319,7 +322,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("EscalationMatrices", (string)null);
+                    b.ToTable("EscalationMatrices");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.MeetingMinute", b =>
@@ -364,7 +367,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("MeetingMinutes", (string)null);
+                    b.ToTable("MeetingMinutes");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Organization", b =>
@@ -382,7 +385,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Organizations", (string)null);
+                    b.ToTable("Organizations");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Phase", b =>
@@ -417,7 +420,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Phases", (string)null);
+                    b.ToTable("Phases");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.PhaseMilestone", b =>
@@ -469,7 +472,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("PhaseMilestones", (string)null);
+                    b.ToTable("PhaseMilestones");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Project", b =>
@@ -503,7 +506,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ProjectBudget", b =>
@@ -543,7 +546,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectBudgets", (string)null);
+                    b.ToTable("ProjectBudgets");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ProjectResource", b =>
@@ -596,7 +599,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectResources", (string)null);
+                    b.ToTable("ProjectResources");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.ProjectUpdate", b =>
@@ -634,7 +637,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectUpdates", (string)null);
+                    b.ToTable("ProjectUpdates");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.RemediationStep", b =>
@@ -669,7 +672,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("RiskProfileId");
 
-                    b.ToTable("RemediationStep", (string)null);
+                    b.ToTable("RemediationStep");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.RiskProfile", b =>
@@ -720,7 +723,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("RiskProfiles", (string)null);
+                    b.ToTable("RiskProfiles");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Sprint", b =>
@@ -771,7 +774,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("PhaseMilestoneId");
 
-                    b.ToTable("Sprints", (string)null);
+                    b.ToTable("Sprints");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.Stakeholder", b =>
@@ -814,7 +817,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Stakeholders", (string)null);
+                    b.ToTable("Stakeholders");
                 });
 
             modelBuilder.Entity("Promact.CustomerSuccess.Platform.Entities.VersionHistory", b =>
@@ -867,7 +870,7 @@ namespace Promact.CustomerSuccess.Platform.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("VersionHistories", (string)null);
+                    b.ToTable("VersionHistories");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
