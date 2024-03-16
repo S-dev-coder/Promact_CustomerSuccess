@@ -4,7 +4,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace Promact.CustomerSuccess.Platform.Services.Dtos.RiskProfiles
 {
-    public class RiskProfileDto : AggregateRoot<Guid>
+    public class RiskProfileDto : IEntityDto<Guid>
     {
         public Guid Id { get; set; }
         public Guid ProjectId { get; set; }
@@ -16,9 +16,5 @@ namespace Promact.CustomerSuccess.Platform.Services.Dtos.RiskProfiles
         public DateTime ClosureDate { get; set; }
         public virtual ICollection<RemediationStep>? RemediationSteps { get; set; }
         public virtual Project? Project { get; set; }
-        public override object?[] GetKeys()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

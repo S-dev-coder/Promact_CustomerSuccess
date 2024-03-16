@@ -2,6 +2,7 @@
 using Promact.CustomerSuccess.Platform.Services.Dtos.ClientFeedbacks;
 using Promact.CustomerSuccess.Platform.Services.Dtos.Documents;
 using Promact.CustomerSuccess.Platform.Services.Dtos.MeetingMinutes;
+using Promact.CustomerSuccess.Platform.Services.Dtos.PhaseMilestones;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectResources;
 using Promact.CustomerSuccess.Platform.Services.Dtos.RiskProfiles;
