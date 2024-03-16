@@ -1,5 +1,5 @@
 ﻿using Promact.CustomerSuccess.Platform.Entities;
-using Promact.CustomerSuccess.Platform.Services.Dtos;
+using Promact.CustomerSuccess.Platform.Services.Dtos.MeetingMinutes;
 using Promact.CustomerSuccess.Platform.Services.ProjectResources;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;

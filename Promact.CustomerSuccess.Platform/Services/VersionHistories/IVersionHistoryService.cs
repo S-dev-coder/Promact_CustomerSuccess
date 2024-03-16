@@ -1,6 +1,8 @@
-﻿namespace Promact.CustomerSuccess.Platform.Services.VersionHistories
+﻿using Volo.Abp.Application.Services;
+
+namespace Promact.CustomerSuccess.Platform.Services.VersionHistories
 {
-    public interface IVersionHistoryService
+    public interface IVersionHistoryService : IApplicationService
     {
     }
 }

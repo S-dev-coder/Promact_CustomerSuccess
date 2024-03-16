@@ -2,7 +2,7 @@
 
 
 using Promact.CustomerSuccess.Platform.Entities;
-using Promact.CustomerSuccess.Platform.Services.Dtos;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectUpdates;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
