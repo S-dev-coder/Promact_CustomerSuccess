@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Promact.CustomerSuccess.Platform.Entities;
+using Promact.CustomerSuccess.Platform.Services.Dtos;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ApprovedTeams;
 using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ClientFeedbacks;
+using Promact.CustomerSuccess.Platform.Services.Dtos.EscalationMatrices;
 using Promact.CustomerSuccess.Platform.Services.Dtos.MeetingMinutes;
 using Promact.CustomerSuccess.Platform.Services.Dtos.Phases;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
@@ -77,6 +79,16 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<CreateVersionHistoryDto, VersionHistory>();
         CreateMap<UpdateVersionHistoryDto, VersionHistory>();
         CreateMap<VersionHistory, VersionHistoryDto>().ReverseMap();
+
+        // mapping for stakeholder
+        CreateMap<CreateStakeholderDto, Stakeholder>();
+        CreateMap<UpdateStakeholderDto, Stakeholder>();
+        CreateMap<Stakeholder, StakeholderDto>().ReverseMap();
+        
+        // mapping for escalation matrix
+        CreateMap<CreateEscalationMatrixDto, EscalationMatrix>();
+        CreateMap<UpdateEscalationMatrixDto, EscalationMatrix>();
+        CreateMap<EscalationMatrix, EscalationMatrixDto>().ReverseMap();
     }
 
 }
