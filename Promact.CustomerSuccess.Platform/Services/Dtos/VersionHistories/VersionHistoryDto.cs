@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Volo.Abp.Domain.Entities.Auditing;
+﻿using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Entities;
 
-namespace Promact.CustomerSuccess.Platform.Entities
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.VersionHistories
 {
-    public class VersionHistory: AuditedEntity<Guid>
+    public class VersionHistoryDto : IEntityDto<Guid>
     {
-        [ForeignKey(nameof(Project))]
+        public Guid Id { get; set; }
         public Guid ProjectId { get; set; }
         public int Version { get; set; }
         public string? Type { get; set; }

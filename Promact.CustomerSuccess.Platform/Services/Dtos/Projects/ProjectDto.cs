@@ -1,4 +1,4 @@
-﻿using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistorys;
+﻿using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
 using Volo.Abp.Application.Dtos;
 

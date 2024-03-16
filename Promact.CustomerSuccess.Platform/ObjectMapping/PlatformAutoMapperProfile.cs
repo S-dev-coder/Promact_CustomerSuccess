@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Promact.CustomerSuccess.Platform.Entities;
 using Promact.CustomerSuccess.Platform.Services.Dtos;
-using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistorys;
+using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
 using Promact.CustomerSuccess.Platform.Services.Dtos.Projects;
 
@@ -15,7 +15,6 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<CreateProjectDto, Project>();
         CreateMap<UpdateProjectDto, Project>();
         CreateMap<Project, ProjectDto>().ReverseMap();
-
 
         CreateMap<CreateClientFeedbackDto, ClientFeedback>();
         CreateMap<UpdateClientFeedbackDto, ClientFeedback>();
@@ -60,6 +59,16 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<CreateRiskProfileDto, RiskProfile>();
         CreateMap<UpdateRiskProfileDto, RiskProfile>();
         CreateMap<RiskProfile, RiskProfileDto>().ReverseMap();
+
+        // mapping for audit history
+        CreateMap<CreateAuditHistoryDto, AuditHistory>();
+        CreateMap<UpdateAuditHistoryDto, AuditHistory>();
+        CreateMap<AuditHistory, AuditHistoryDto>().ReverseMap();
+
+        // mapping for version history
+        CreateMap<CreateVersionHistoryDto, VersionHistory>();
+        CreateMap<UpdateVersionHistoryDto, VersionHistory>();
+        CreateMap<VersionHistory, VersionHistoryDto>().ReverseMap();
     }
 
 }
