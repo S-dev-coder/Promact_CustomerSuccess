@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.Application.Dtos;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.ApprovedTeams
 {
     public class ApprovedTeamDto : IEntityDto<Guid>
     {

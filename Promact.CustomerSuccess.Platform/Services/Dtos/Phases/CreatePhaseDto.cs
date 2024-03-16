@@ -1,6 +1,6 @@
-﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos
+﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos.Phases
 {
-    public class UpdatePhaseDto
+    public class CreatePhaseDto
     {
         public string Name { get; set; }
         public Guid ProjectId { get; set; }

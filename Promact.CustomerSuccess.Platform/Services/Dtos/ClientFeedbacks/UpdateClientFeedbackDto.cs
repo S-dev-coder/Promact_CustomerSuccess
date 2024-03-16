@@ -1,7 +1,6 @@
-﻿using Promact.CustomerSuccess.Platform;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.ClientFeedbacks
 {
     public class UpdateClientFeedbackDto
     {

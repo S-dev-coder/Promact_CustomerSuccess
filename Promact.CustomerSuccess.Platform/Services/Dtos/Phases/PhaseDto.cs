@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Application.Dtos;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.Phases
 {
     public class PhaseDto : IEntityDto<Guid>
     {

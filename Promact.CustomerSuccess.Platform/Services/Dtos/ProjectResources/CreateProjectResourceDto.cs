@@ -1,11 +1,7 @@
-﻿using Volo.Abp.Application.Dtos;
-
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos.ProjectResources
 {
-    public class ProjectResourceDto: IEntityDto<Guid>
+    public class CreateProjectResourceDto
     {
-        public Guid Id { get; set; }
-        public Guid ProjectId { get; set; }
         public Guid ResourceId { get; set; }
         public virtual Guid Resource { get; set; }
         public double AllocationPercentage { get; set; }
@@ -13,7 +9,5 @@ namespace Promact.CustomerSuccess.Platform.Services.Dtos
         public DateTime End { get; set; }
         public required string Role { get; set; }
         public string? Comment { get; set; }
-
-
     }
 }

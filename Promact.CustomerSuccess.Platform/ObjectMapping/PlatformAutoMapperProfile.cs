@@ -1,9 +1,16 @@
 ﻿using AutoMapper;
 using Promact.CustomerSuccess.Platform.Entities;
-using Promact.CustomerSuccess.Platform.Services.Dtos;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ApprovedTeams;
 using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ClientFeedbacks;
+using Promact.CustomerSuccess.Platform.Services.Dtos.MeetingMinutes;
+using Promact.CustomerSuccess.Platform.Services.Dtos.Phases;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectResources;
 using Promact.CustomerSuccess.Platform.Services.Dtos.Projects;
+using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectUpdates;
+using Promact.CustomerSuccess.Platform.Services.Dtos.RiskProfiles;
+using Promact.CustomerSuccess.Platform.Services.Dtos.Stakeholders;
 using Promact.CustomerSuccess.Platform.Services.Dtos.VersionHistories;
 
 namespace Promact.CustomerSuccess.Platform.ObjectMapping;
@@ -53,9 +60,9 @@ public class PlatformAutoMapperProfile : Profile
         CreateMap<UpdateVersionHistoryDto, VersionHistory>();
         CreateMap<VersionHistory, VersionHistoryDto>().ReverseMap();
 
-        CreateMap<CreateStakeholdersDto, Stakeholders>();
-        CreateMap<UpdateStakeholdersDto, Stakeholders>();
-        CreateMap<Stakeholders, StakeholdersDto>().ReverseMap();
+        CreateMap<CreateStakeholderDto, Stakeholder>();
+        CreateMap<UpdateStakeholderDto, Stakeholder>();
+        CreateMap<Stakeholder, StakeholderDto>().ReverseMap();
 
         CreateMap<CreateRiskProfileDto, RiskProfile>();
         CreateMap<UpdateRiskProfileDto, RiskProfile>();

@@ -1,8 +1,7 @@
-﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos
+﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos.ProjectResources
 {
-    public class CreateProjectResourceDto
+    public class UpdateProjectResourceDto
     {
-        public Guid ResourceId { get; set; }
         public virtual Guid Resource { get; set; }
         public double AllocationPercentage { get; set; }
         public DateTime Start { get; set; }

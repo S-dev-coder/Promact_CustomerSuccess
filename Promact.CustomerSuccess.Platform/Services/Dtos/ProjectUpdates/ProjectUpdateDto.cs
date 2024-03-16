@@ -1,8 +1,8 @@
 ﻿using Volo.Abp.Application.Dtos;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.ProjectUpdates
 {
-    public class ProjectUpdateDto:  IEntityDto<Guid>
+    public class ProjectUpdateDto : IEntityDto<Guid>
     {
         public Guid Id { get; set; }
         public Guid ProjectId { get; set; }

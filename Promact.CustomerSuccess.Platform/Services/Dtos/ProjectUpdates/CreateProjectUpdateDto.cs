@@ -1,6 +1,6 @@
-﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos
+﻿namespace Promact.CustomerSuccess.Platform.Services.Dtos.ProjectUpdates
 {
-    public class UpdateProjectUpdateDto
+    public class CreateProjectUpdateDto
     {
         public Guid ProjectId { get; set; }
 
