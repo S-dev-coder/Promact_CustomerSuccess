@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp.EntityFrameworkCore" Version="9.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.0.4" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.0.5" />
     <PackageReference Include="Volo.Abp.Autofac" Version="8.0.4" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.0.4" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.0.5" />
     <PackageReference Include="Volo.Abp.Swashbuckle" Version="8.0.4" />
     <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="8.0.4" />
     <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="8.0.4" />
@@ -104,15 +103,19 @@
     <Compile Remove="Logs\**" />
     <Compile Remove="Services\NewFolder2\**" />
     <Compile Remove="Services\NewFolder3\**" />
+    <Compile Remove="Services\SprintWise\**" />
     <Content Remove="Logs\**" />
     <Content Remove="Services\NewFolder2\**" />
     <Content Remove="Services\NewFolder3\**" />
+    <Content Remove="Services\SprintWise\**" />
     <EmbeddedResource Remove="Logs\**" />
     <EmbeddedResource Remove="Services\NewFolder2\**" />
     <EmbeddedResource Remove="Services\NewFolder3\**" />
+    <EmbeddedResource Remove="Services\SprintWise\**" />
     <None Remove="Logs\**" />
     <None Remove="Services\NewFolder2\**" />
     <None Remove="Services\NewFolder3\**" />
+    <None Remove="Services\SprintWise\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -121,10 +124,6 @@
 
   <ItemGroup>
     <Compile Remove="Entities\Client_Feedback.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\SprintWise\" />
   </ItemGroup>
 
 </Project>

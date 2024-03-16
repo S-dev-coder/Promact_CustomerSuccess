@@ -35,6 +35,8 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     public DbSet<ProjectUpdate> ProjectUpdates { get; set; }
     public DbSet<ApprovedTeam> ApprovedTeams { get; set; }
     public DbSet<Phase> Phases { get; set; }
+    public DbSet<VersionHistory> VersionHistories { get; set; }
+    public DbSet<AuditHistory> AuditHistories { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -118,6 +120,16 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
         builder.Entity<Phase>(Phase =>
         {
             Phase.ConfigureByConvention();
+        });
+
+        builder.Entity<VersionHistory>(VersionHistory =>
+        {
+            VersionHistory.ConfigureByConvention();
+        });
+
+        builder.Entity<AuditHistory>(AuditHistory =>
+        {
+            AuditHistory.ConfigureByConvention();
         });
     }
 }

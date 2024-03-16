@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Promact.CustomerSuccess.Platform.Services.Dtos
+namespace Promact.CustomerSuccess.Platform.Services.Dtos.Projects
 {
-    public class UpdateProjectDto
+    public class CreateProjectDto
     {
         [Required]
         [StringLength(128)]
