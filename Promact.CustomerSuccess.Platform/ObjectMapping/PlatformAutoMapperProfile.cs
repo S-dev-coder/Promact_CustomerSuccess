@@ -4,6 +4,7 @@ using Promact.CustomerSuccess.Platform.Services.Dtos;
 using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
 using Promact.CustomerSuccess.Platform.Services.Dtos.ProjectBudgets;
 using Promact.CustomerSuccess.Platform.Services.Dtos.Projects;
+using Promact.CustomerSuccess.Platform.Services.Dtos.VersionHistories;
 
 namespace Promact.CustomerSuccess.Platform.ObjectMapping;
 

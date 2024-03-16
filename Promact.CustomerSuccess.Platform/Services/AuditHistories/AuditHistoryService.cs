@@ -3,7 +3,6 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Promact.CustomerSuccess.Platform.Entities;
 using Promact.CustomerSuccess.Platform.Services.Dtos.AuditHistories;
-using Promact.CustomerSuccess.Platform.Services.Dtos;
 using AutoMapper;
 
 
@@ -26,9 +25,9 @@ namespace Promact.CustomerSuccess.Platform.Services.AuditHistories
         {
             _mapper = mapper;
         }
-        public async Task<List<AuditHistoryDto>> GetAuditHistoriesByProjectIdAsync(Guid projectId)
+        public async Task<List<AuditHistoryDto>> GetByProjectIdAsync(Guid projectId)
         {
-            var versionHistories = await Repository.GetListAsync(vh => vh.ProjectId == projectId);
+            var versionHistories = await Repository.GetListAsync(x => x.ProjectId == projectId);
             // map using automapper
             return _mapper.Map<List<AuditHistoryDto>>(versionHistories);
         }
