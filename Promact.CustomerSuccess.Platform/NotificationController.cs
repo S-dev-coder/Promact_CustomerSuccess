@@ -27,17 +27,19 @@ namespace Promact.CustomerSuccess.Platform
                     mailMessage.To.Add(notificationData.Email);
                     mailMessage.Subject = notificationData.Subject;
                     mailMessage.Body = notificationData.Message;
-                    mailMessage.IsBodyHtml = true;
+                    mailMessage.IsBodyHtml = false;
 
                     // Send the email
                     smtpClient.Send(mailMessage);
                 }
-
-                return Ok("Email notification sent successfully");
+               
+                // Return JSON response
+                return Ok(new { Message = "Email notification sent successfully" });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Failed to send email notification: {ex.Message}");
+                // Return JSON response with error
+                return StatusCode(500, new { ErrorMessage = $"Failed to send email notification: {ex.Message}" });
             }
         }
     }
